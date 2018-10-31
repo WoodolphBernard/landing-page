@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Landing Page</title>
+  <style media="screen">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #eee;
+      font-family: 'Lato', sans-serif;
+    }
+
+    #header {
+      width: 100%;
+      height: 70px;
+      position: fixed;
+        top: 0;
+        left: 0;
+      background: #eee;
+    }
+
+    #header-img {
+      width: 300px;
+      line-height: 90px;
+      margin-left: 30px;
+      margin-top: 20px;
+    }
+
+    nav {
+      float: right;
+      width: auto;
+      height: auto;
+      margin-right: 30px;
+      margin-top: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin: 14px 7px;
+      font-size: 1.1em;
+    }
+
+    nav ul li .nav-link{
+      text-decoration: none;
+      color: #000;
+    }
+
+    .container {
+      min-width: 300px;
+      max-width: 1000px;
+      height: auto;
+      margin: auto;
+      padding: 2em 5px;
+      overflow: hidden;
+    }
+
+    #title {
+      margin-top: 90px;
+      text-align: center;
+      font-size: 1.5em;
+    }
+
+    #form {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    #form input[type=email] {
+      height: 30px;
+      width: 270px;
+      margin-bottom: 15px;
+    }
+
+    #form input[type=submit] {
+      display: block;
+      margin: auto;
+      padding: 0.3em 0.4em;
+      border-radius: 2px;
+      border: none;
+      font-weight: 900;
+      font-size: 1.1em;
+      background: #f1c40f;
+    }
+
+    #features {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .item {
+      /*outline: 1px solid #000;*/
+      padding: 1.8em 0;
+      display: grid;
+      grid-template-columns: 50px auto;
+      column-gap: 3.75em;
+    }
+
+    .icon {
+      width: 50px;
+      height: auto;
+      overflow: hidden;
+      margin-left: 1.1em;
+      margin-top: 0.5em;
+
+    }
+
+    .icon img {
+      width: 100%;
+      height: auto;
+    }
+
+    #video-wrap {
+      max-width: 600px;
+      height: 350px;
+      overflow: hidden;
+      margin: 25px auto 70px;
+      background: linear-gradient(45deg, purple, black);
+    }
+
+    #pricing {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(100px, 300px));
+      grid-template-rows: auto;
+      justify-content: center;
+      align-items: center;
+      grid-gap: 0 5px;
+    }
+
+    .trombone {
+      border: 1px solid #000;
+      text-align: center;
+      height: 320px;
+      max-width: 290px;
+    }
+
+    .trombone .title-wrap {
+      background: #ddd;
+      height: auto;
+      width: 100%;
+      padding: 1.2em 0;
+      font-size: 0.7em;
+    }
+
+    .trombone .content-wrap {
+      padding: 1em 2em;
+    }
+
+    .trombone .content-wrap .number{
+      font-size: 1.5em;
+    }
+
+    .trombone .content-wrap ul {
+      padding: 1.6em 0;
+      list-style-type: none;
+    }
+
+    .trombone .content-wrap ul li {
+      line-height: 30px;
+    }
+
+
+    .trombone .content-wrap button {
+      padding: 0.7em 1.4em;
+      border: none;
+      border-radius: 2px;
+      background: #f1c40f;
+      font-size: 1em;
+    }
+
+    footer {
+      background: #ddd;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      height: 90px;
+      justify-content: center;
+    }
+
+    footer ul {
+      margin-right: 15px;
+    }
+
+    footer ul li {
+      display: inline-block;
+      margin: 5px 5px;
+    }
+
+    footer ul li a {
+      text-decoration: none;
+      color: #111;
+    }
+
+    footer p {
+      margin-right: 15px;
+      font-size: 0.9em;
+      color:#444;
+    }
+
+
+    @media only screen and (max-width: 721px) {
+      #header {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        text-align: center;
+        height: auto;
+      }
+
+      #header-img {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      nav ul li {
+        display: block;
+        margin: 2px 7px;
+      }
+
+      #title {
+        margin-top: 120px;
+      }
+
+      #pricing {
+        display: grid;
+        grid-template-columns: 300px;
+        grid-template-rows: repeat(3, 300px);
+        justify-content: center;
+        align-items: center;
+        grid-gap: 35px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- header section -->
+  <header id="header">
+    <!-- header image -->
+    <img id="header-img" src="https://s3.amazonaws.com/freecodecamp/original_trombones.png" alt="original trombones logo">
+    <!-- navigation -->
+    <nav id="nav-bar">
+      <ul>
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+        <li><a href="#pricing" class="nav-link">Pricing</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <div class="container">
+    <h1 id="title">Handcrafted, home-made masterpieces</h1>
+    <form action=" https://www.freecodecamp.com/email-submit" id="form">
+      <input type="email" name="email" id="email" placeholder="Enter your email address">
+      <input type="submit" name="submit" id="submit" value="GET STARTED">
+    </form>
+
+
+
+    <div class="space" style="width: 100%; height: 100px;"></div>
+
+    <section id="features">
+      <div class="item">
+        <div class="icon">
+          <img src="https://cdn4.iconfinder.com/data/icons/we-re-the-best/512/best-badge-cup-gold-medal-game-win-winner-gamification-first-award-acknowledge-acknowledgement-prize-victory-reward-conquest-premium-rank-ranking-gold-hero-star-quality-challenge-trophy-praise-victory-success-512.png" alt="">
+        </div>
+        <div class="premiums">
+          <h1>Premiun Materials</h1>
+          <p>Our trombones use the shiniest brass which is sourced locally. This will increase the longevity of your purchase.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="icon">
+          <img src="https://cdn2.iconfinder.com/data/icons/industrial-glyphs-1/128/26-512.png" alt="">
+        </div>
+        <div class="premiums">
+          <h1>Fast Shipping</h1>
+          <p>We make sure you recieve your trombone as soon as we have finished making it. We also provide free returns if you are not satisfied.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="icon">
+          <img src="http://www.newdesignfile.com/postpic/2015/12/quality-assurance-icon_294526.png" alt="">
+        </div>
+        <div class="premiums">
+          <h1>Quality Assurance</h1>
+          <p>For every purchase you make, we will ensure there are no damages or faults and we will check and test the pitch of your instrument.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works">
+      <div id="video-wrap">
+        <iframe id="video" width="100%" height="100%" src="https://www.youtube.com/embed/0OttfOXsP2M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="trombone">
+        <div class="title-wrap">
+          <h2 class="title">TENOR TROMBONE</h2>
+        </div>
+        <div class="content-wrap">
+          <p class="number">$600</p>
+          <ul>
+            <li>Lorem ipsum</li>
+            <li>Lorem ipsum</li>
+            <li>Lorem ipsum dolor</li>
+            <li>Lorem ipsum</li>
+          </ul>
+          <button type="button" name="button" value="SELECT">SELECT</button>
+        </div>
+      </div>
+
+      <div class="trombone">
+        <div class="title-wrap">
+          <h2 class="title">BASS TROMBONE</h2>
+        </div>
+        <div class="content-wrap">
+          <p class="number">$900</p>
+          <ul>
+            <li>Lorem ipsum</li>
+            <li>Lorem ipsum</li>
+            <li>Lorem ipsum dolor</li>
+            <li>Lorem ipsum</li>
+          </ul>
+          <button type="button" name="button" value="SELECT">SELECT</button>
+        </div>
+      </div>
+
+      <div class="trombone">
+        <div class="title-wrap">
+          <h2 class="title">VALVE TROMBONE</h2>
+        </div>
+        <div class="content-wrap">
+          <p class="number">$1200</p>
+          <ul>
+            <li>Lorem ipsum</li>
+            <li>Lorem ipsum</li>
+            <li>Lorem ipsum dolor</li>
+            <li>Lorem ipsum</li>
+          </ul>
+          <button type="button" name="button" value="SELECT">SELECT</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="container" style="padding: 0;">
+    <footer>
+      <ul>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <p>Copyright 2018, Original Trombones</p>
+    </footer>
+  </div>
+
+  <!-- Test Suite -->
+  <script type="text/javascript" src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js">
+  </script>
+</body>
+</html>
